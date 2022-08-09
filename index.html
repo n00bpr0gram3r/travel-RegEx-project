@@ -17,6 +17,24 @@
   </head>
   <body class="p-3 m-0 border-0 bd-example">
     <!-- Example Code -->
+    <div id="success" class="alert alert-success alert-dismissible" role="alert">
+      <strong>Congratulations!!!</strong> All details have been putted successfully
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div id="danger" class="alert alert-danger alert-dismissible" role="alert">
+    <strong>Opps!!!</strong> Please re-check your submissions
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
 
     <form class="row g-3">
       <div class="col-md-6">
@@ -26,7 +44,10 @@
           class="form-control"
           id="email"
           placeholder="Enter Your Email"
+          required
         />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter a valid email.</div>
       </div>
       <div class="col-md-6">
         <label for="username" class="form-label">Username</label>
@@ -36,6 +57,8 @@
           id="username"
           placeholder="Enter Your username"
         />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter a valid username.</div>
       </div>
       <div class="col-12">
         <label for="adress" class="form-label">Address</label>
@@ -54,7 +77,14 @@
         <label for="phoneNumber" class="form-label"
           >Enter Your phone Number</label
         >
-        <input type="text" class="form-control" id="inputNumber" />
+        <input
+          type="text"
+          class="form-control"
+          id="phoneNumber"
+          placeholder="Enter your mobile Number"
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter a valid phone number.</div>
       </div>
       <div class="col-md-3">
         <label for="car" class="form-label">Select the cars</label>
@@ -67,7 +97,9 @@
         </select>
       </div>
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" id="submit" class="btn btn-primary">
+          Submit
+        </button>
       </div>
     </form>
 
