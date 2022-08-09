@@ -82,10 +82,10 @@ submit.addEventListener('click', (e) => {
     success.classList.remove('show');
     success.classList.add('d-none');
     danger.classList.remove('show');
-    success.classList.add('d-none');
-  });
+    danger.classList.add('d-none');
+  },3000);
   e.preventDefault();
-  email.value = '';
-  username.value = '';
-  phoneNumber.value = '';
+  // email.value = '';
+  // username.value = '';
+  // phoneNumber.value = '';
 });
