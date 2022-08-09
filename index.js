@@ -7,6 +7,8 @@ console.log(username, email);
 let validEmail = false;
 let validUser = false;
 let validPhone = false;
+success.classList.add('d-none');
+danger.classList.add('d-none');
 email.addEventListener('blur', () => {
   console.log('You have entered email');
   let regex = /^([_\-\.a-zA-Z0-9]+)@([_\-\.a-zA-Z0-9]+)\.[a-zA-Z]{2,7}$/;
@@ -63,12 +65,27 @@ submit.addEventListener('click', (e) => {
   let danger = document.getElementById('danger');
   if (validEmail && validPhone && validUser) {
     console.log('Every details has been putted correctly');
+    success.classList.remove('d-none');
     success.classList.add('show');
-    danger.classList.add('d-none')
+    danger.classList.remove('show');
+    danger.classList.add('d-none');
+    console.log(success.classList, danger.classList);
   } else {
     console.log('Please re check your entries');
+    danger.classList.remove('d-none');
     danger.classList.add('show');
-    success.classList.add('d-none')
+    success.classList.remove('show');
+    success.classList.add('d-none');
+    console.log(success.classList, danger.classList);
   }
+  setTimeout(() => {
+    success.classList.remove('show');
+    success.classList.add('d-none');
+    danger.classList.remove('show');
+    success.classList.add('d-none');
+  });
   e.preventDefault();
+  email.value = '';
+  username.value = '';
+  phoneNumber.value = '';
 });
